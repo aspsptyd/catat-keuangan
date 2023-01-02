@@ -46,10 +46,11 @@
         array_push($result_outcome, 
         array(
             'kode_pengeluaran'=>(String)$row[0],
-            'deskripsi_pengeluaran'=>(String)$row[1],
-            'kategori_pengeluaran'=>(String)$row[2],
-            'jml_pengeluaran'=>(int)$row[3],
-            'status_pengeluaran'=>(String)$row[4],
+            'jumlah_pengeluaran'=>(int)$row[1],
+            'status'=>(String)$row[2],
+            'keterangan'=>(String)$row[3],
+            'kategori_pengeluaran'=>(String)$row[4],
+            'pemasukan_dari'=>(String)$row[5],
         ));
     }
     

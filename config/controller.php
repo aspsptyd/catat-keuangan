@@ -17,7 +17,7 @@
                     $username_db          = "dev";
                     $key_db               = ">>!!&21Adi";
                     break;
-                case "B":
+                default:
                     $username_db          = "root";
                     $key_db               = "";
                     break;

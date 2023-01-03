@@ -14,12 +14,12 @@
             $host_db                      = "127.0.0.1";
             switch ($select_dev_team) {
                 case "A":
-                    $username_db                  = "dev";
-                    $key_db                       = ">>!!&21Adi";
+                    $username_db          = "dev";
+                    $key_db               = ">>!!&21Adi";
                     break;
                 case "B":
-                    $username_db                  = "root";
-                    $key_db                       = "";
+                    $username_db          = "root";
+                    $key_db               = "";
                     break;
             }
             $db_name                      = "db_kelola_keuangan";

@@ -163,3 +163,58 @@ SELECT * FROM tbl_data_pengeluaran;
 
 -- MELIHAT STRUKTUR TABLE
 DESC tbl_data_pemasukan;
+
+-- TAMBAH PROSES OTENTIKASI USER
+CREATE TABLE tbl_data_user (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	id_user VARCHAR(60) NOT NULL,
+	username TEXT,
+	userkey TEXT,
+	lisensi_user TEXT,
+	auth_access TEXT,
+	tanggal_register TEXT,
+	CONSTRAINT pk_dt_user PRIMARY KEY (id, id_user)
+);
+
+DROP TABLE tbl_data_user;
+
+DESC tbl_data_user;
+
+-- Randomize Number SQL
+SELECT ROUND(RAND() * 3123115224);
+
+INSERT INTO tbl_data_user
+(id_user, username, userkey, lisensi_user, auth_access, tanggal_register) 
+VALUES 
+('03012023-110359', 'dev', md5('dev'), '2423098432-298349234-293842398-923', '-', '03 Januari 2023');
+
+SELECT * FROM tbl_data_user;
+
+UPDATE tbl_data_user
+SET lisensi_user = "-"
+WHERE id = 1;
+
+-- Query Proses Login
+SELECT
+	id, id_user, username, lisensi_user, auth_access, tanggal_register
+FROM
+	tbl_data_user
+WHERE 
+	username = 'dev' AND userkey = md5('dev');
+
+-- Update Auth Akses Untuk Login
+UPDATE tbl_data_user
+SET auth_access = ROUND(RAND() * 3123115224)
+WHERE id = 1;
+
+UPDATE tbl_data_user
+SET lisensi_user = "923482-923492-2983742"
+WHERE id = 1;
+
+-- Cek Ketersediaan User di Database
+SELECT
+	COUNT(id)
+FROM
+	tbl_data_user
+WHERE 
+	username = "dev" AND userkey = md5('dev');

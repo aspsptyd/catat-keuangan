@@ -5,15 +5,24 @@
     # Version API
     $versionapp_api                       = "V1.0-alpha";
     $build_version_api                    = "Build 29122022.1109";
+    $select_dev_team                      = "A";
  
     switch ($switch_server) {
         case "LOCAL":
             # Server Local Komputer
-            $server_db                 = "Lokal Komputer";
-            $host_db                   = "127.0.0.1";
-            $username_db               = "root";
-            $key_db                    = "";
-            $db_name                   = "db_kelola_keuangan";
+            $server_db                    = "Lokal Komputer";
+            $host_db                      = "127.0.0.1";
+            switch ($select_dev_team) {
+                case "A":
+                    $username_db                  = "dev";
+                    $key_db                       = ">>!!&21Adi";
+                    break;
+                case "B":
+                    $username_db                  = "root";
+                    $key_db                       = "";
+                    break;
+            }
+            $db_name                      = "db_kelola_keuangan";
             break;
     }
 

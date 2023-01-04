@@ -7,11 +7,11 @@
     #
     
     # Query Jumlah Pemasukan
-    $QUERY_JML_INCOME = mysqli_query($connecting, "SELECT * FROM overview_pemasukan;");
+    $QUERY_JML_INCOME = mysqli_query($connecting, "SELECT SUM(sisa_pemasukan) AS jumlah_income_saatini, COUNT(id) AS jml_data_in FROM tbl_data_pemasukan;");
     $GET_JML_INCOME = mysqli_fetch_row($QUERY_JML_INCOME);
 
     # Query Income
-    $QUERYINCOME = "SELECT * FROM list_data_pemasukan;";
+    $QUERYINCOME = "SELECT kode_pemasukan, deskripsi_pemasukan, pemasukan, sisa_pemasukan FROM tbl_data_pemasukan;";
 
     # Eksekusi Query Income
     $EXEC_INCOME = mysqli_query($connecting, $QUERYINCOME);
@@ -30,11 +30,11 @@
     }
 
     # Query Jumlah Pengeluaran
-    $QUERY_JML_OUTCOME = mysqli_query($connecting, "SELECT * FROM overview_pengeluaran;");
+    $QUERY_JML_OUTCOME = mysqli_query($connecting, "SELECT SUM(jml_pengeluaran) AS jml_pengeluaran, COUNT(id) AS jml_data_out FROM tbl_data_pengeluaran WHERE status_pengeluaran = 'Done';");
     $GET_JML_OUTCOME = mysqli_fetch_row($QUERY_JML_OUTCOME);
 
     # Query Outcome
-    $QUERYOUTCOME = "SELECT * FROM list_data_pengeluaran;";
+    $QUERYOUTCOME = "SELECT tbl_data_pengeluaran.kode_pengeluaran, tbl_data_pengeluaran.jml_pengeluaran, tbl_data_pengeluaran.status_pengeluaran, tbl_data_pengeluaran.deskripsi_pengeluaran, tbl_data_pengeluaran.kategori_pengeluaran, tbl_data_pemasukan.deskripsi_pemasukan FROM tbl_data_pengeluaran JOIN tbl_data_pemasukan ON tbl_data_pemasukan.kode_pemasukan=tbl_data_pengeluaran.kode_pemasukan WHERE tbl_data_pengeluaran.status_pengeluaran = 'Done';";
 
     # Eksekusi Query Income
     $EXEC_OUTCOME = mysqli_query($connecting, $QUERYOUTCOME);

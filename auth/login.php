@@ -19,10 +19,19 @@
             if ($USER_EXIST[0]) {
                 $message = 'Yay, Anda berhasil melakukan login!';
 
+
                 # Extract Data User
                 $QUERY_AKSES_DATA_USER = "SELECT id, id_user, username, lisensi_user, auth_access, tanggal_register FROM tbl_data_user WHERE username = '" . $username . "' AND userkey = md5('" . $userkey . "');";
                 $EXECUTE_AKSES_DATA = mysqli_query($connecting, $QUERY_AKSES_DATA_USER);
                 $FETCH_DATA_USER = mysqli_fetch_row($EXECUTE_AKSES_DATA);
+
+                # Format Kode Random
+                date_default_timezone_set("Asia/Jakarta");
+                $kode_random = date("d") . date("m") . date("Y") . date("H"). date("i"). date("s"); // 03 01 2023 15 42 11
+
+                # Update Auth Access
+                $QUERY_UPDATE_AUTH_ACCESS = "UPDATE tbl_data_user SET auth_access = md5(ROUND(RAND() * $kode_random)) WHERE id = " . $FETCH_DATA_USER[0] . ";";
+                $EXECUTE_SET_NEW_AUTH_ACCESS = mysqli_query($connecting, $QUERY_UPDATE_AUTH_ACCESS);
 
                 if ($FETCH_DATA_USER[3] == "-" || $FETCH_DATA_USER[3] == "") {
                     # Data Lisensi Tidak ada
@@ -32,14 +41,7 @@
                     $response['status'] = false;
                     $response['message'] = $message;
                 } else {
-                    # Format Kode Random
-                    date_default_timezone_set("Asia/Jakarta");
-                    $kode_random = date("d") . date("m") . date("Y") . date("H"). date("i"). date("s"); // 03 01 2023 15 42 11
-
-                    # Update Auth Access
-                    $QUERY_UPDATE_AUTH_ACCESS = "UPDATE tbl_data_user SET auth_access = ROUND(RAND() * $kode_random) WHERE id = " . $FETCH_DATA_USER[0] . ";";
-                    $EXECUTE_SET_NEW_AUTH_ACCESS = mysqli_query($connecting, $QUERY_UPDATE_AUTH_ACCESS);
-
+                    # 
                     $response['code'] = 200;
                     $response['status'] = true;
                     $response['message'] = $message;

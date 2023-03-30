@@ -5,7 +5,7 @@
     # Version API
     $versionapp_api                       = "V1.0-alpha";
     $build_version_api                    = "Build 29122022.1109";
-    $select_dev_team                      = "A";
+    $select_dev_team                      = "B";
  
     switch ($switch_server) {
         case "LOCAL":
@@ -22,7 +22,7 @@
                     $key_db               = "";
                     break;
             }
-            $db_name                      = "db_kelola_keuangan";
+            $db_name                      = "db_catat_keuangan";
             break;
     }
 

@@ -1,0 +1,1 @@
+-- Query 30 Maret 2023

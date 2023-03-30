@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Money_Habit.iml" filepath="$PROJECT_DIR$/.idea/modules/Money_Habit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Money_Habit.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Money_Habit.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/money-habit.iml" filepath="$PROJECT_DIR$/.idea/modules/money-habit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/money-habit.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/money-habit.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/money-habit.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/money-habit.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/money-habit.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/money-habit.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/money-habit.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/money-habit.app.unitTest.iml" />
     </modules>
   </component>
 </project>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Money Habit</string>
+    <string name="text_register">Belum punya akun? <u><b>Register</b></u> disini.</string>
 </resources>

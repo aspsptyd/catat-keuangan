@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/lblNotifyLogin"
+        android:drawablePadding="9dp"
+        android:drawableLeft="@drawable/ic_user_invalid"
+        android:background="@drawable/bg_lbl_notice"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textStyle="bold"
+        android:textSize="7pt"
+        android:textColor="#928E88"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message loaded..."/>
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_username"
+        android:layout_width="match_parent"
+        android:textSize="7pt"
+        android:layout_height="wrap_content"
+        android:hint="User ID"/>
+
+    <EditText
+        android:id="@+id/etPasskey"
+        android:inputType="textPassword"
+        android:drawablePadding="10dp"
+        android:textSize="7pt"
+        android:drawableLeft="@drawable/ic_userkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pass Key Access"/>
+
+    <LinearLayout
+        android:layout_marginLeft="3.4dp"
+        android:layout_marginRight="3.4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressLoading"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"/>
+
+        <Button
+            android:id="@+id/btMasukAplikasi"
+            android:backgroundTint="#009688"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masuk ke Aplikasi"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvToRegister"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#878383"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_register"/>
+
+</LinearLayout>

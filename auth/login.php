@@ -17,7 +17,7 @@
             $USER_EXIST = mysqli_fetch_row($EXECUTE_LOGIN);
 
             if ($USER_EXIST[0]) {
-                $message = 'Yay, Anda berhasil melakukan login!';
+                $message = 'Yay, Akun Anda Terdaftar di Sistem Kami, Harap Tunggu sedang menyiapkan data.';
 
                 # Extract Data User
                 $QUERY_AKSES_DATA_USER = "SELECT id, id_user, username, lisensi_user, auth_access, tanggal_register FROM tbl_data_user WHERE username = '" . $username . "' AND userkey = md5('" . $userkey . "');";

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#144843"
+    android:orientation="vertical"
+    android:gravity="center|center_vertical"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/money_habbit"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="money habbit"/>
+
+    <ProgressBar
+        android:layout_marginTop="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
+</LinearLayout>
